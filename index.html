@@ -111,6 +111,13 @@
             font-size: 4rem;
         }
 
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
@@ -638,7 +645,11 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="hero-image">👤</div>
+            <div class="hero-image">
+                <!-- Replace the src with your actual photo URL -->
+                <img src="your-photo-url-here.jpg" alt="Your Name - Customer Care Specialist">
+                <!-- If no photo yet, the emoji will show as fallback -->
+            </div>
             <h1>Your Name Here</h1>
             <h2>Customer Care Specialist</h2>
             <p>Delivering 100% Client Satisfaction with 5+ Years of Experience | Expert in CRM, Technical Support &amp; Client Relations</p>
@@ -682,9 +693,46 @@
             <p style="font-size: 1.125rem; line-height: 1.8; color: var(--color-text-light); margin-bottom: 1.5rem;">
                 Throughout my career, I've successfully managed high-volume support across multiple channels including phone, email, live chat, and social media. I pride myself on maintaining a 98% customer satisfaction rating while consistently meeting and exceeding performance targets.
             </p>
-            <p style="font-size: 1.125rem; line-height: 1.8; color: var(--color-text-light);">
+            <p style="font-size: 1.125rem; line-height: 1.8; color: var(--color-text-light); margin-bottom: 1.5rem;">
                 <strong style="color: var(--color-primary);">Core Values:</strong> Empathy, Clear Communication, Problem-Solving Excellence, Continuous Improvement, and Client-First Mentality.
             </p>
+            
+            <!-- Education Section -->
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid var(--color-border);">
+                <h3 style="font-size: 1.75rem; color: var(--color-primary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                    🎓 Education
+                </h3>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1.25rem; color: var(--color-text); margin-bottom: 0.5rem; font-weight: 600;">
+                        Bachelor's Degree in [Your Field]
+                    </h4>
+                    <p style="color: var(--color-text-light); margin-bottom: 0.25rem;">
+                        [University Name] | [City, Country]
+                    </p>
+                    <p style="color: var(--color-primary); font-weight: 500;">
+                        [Graduation Year] | GPA: [Your GPA] (Optional)
+                    </p>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="font-size: 1.25rem; color: var(--color-text); margin-bottom: 0.5rem; font-weight: 600;">
+                        Certifications
+                    </h4>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-light);">
+                            <span style="color: var(--color-secondary); font-weight: 700;">✓</span>
+                            Customer Service Excellence Certificate - [Institution/Platform]
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-light);">
+                            <span style="color: var(--color-secondary); font-weight: 700;">✓</span>
+                            CRM Software Certification (Salesforce/Zendesk)
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem; color: var(--color-text-light);">
+                            <span style="color: var(--color-secondary); font-weight: 700;">✓</span>
+                            Professional Communication Skills Course
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1066,4 +1114,3 @@
     </script>
 </body>
 </html>
-
