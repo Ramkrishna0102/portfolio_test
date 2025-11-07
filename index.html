@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Care Specialist Portfolio</title>
+    <style>
+        :root {
+            --color-primary: #2563eb;
+            --color-primary-dark: #1e40af;
+            --color-secondary: #10b981;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-bg: #ffffff;
+            --color-bg-light: #f9fafb;
+            --color-border: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-bg-light);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--color-bg);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--color-text);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 5px solid white;
+            box-shadow: var(--shadow-lg);
+            object-fit: cover;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--color-primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--color-primary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--color-text-light);
+            margin-bottom: 3rem;
+            font-size: 1.125rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--color-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--color-text-light);
+            font-size: 1rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--color-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-list li::before {
+            content: "✓";
+            color: var(--color-secondary);
+            font-weight: 700;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--color-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .service-card p {
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--color-primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: var(--color-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -3.5rem;
+            top: 2rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            border: 3px solid var(--color-bg-light);
+        }
+
+        .timeline-date {
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item h4 {
+            color: var(--color-text-light);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .timeline-item ul {
+            margin-left: 1.5rem;
+        }
+
+        .timeline-item li {
+            margin-bottom: 0.5rem;
+            color: var(--color-text-light);
+        }
+
+        /* Case Studies */
+        .case-studies-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .case-study {
+            background: var(--color-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .case-study-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-study-icon {
+            font-size: 2.5rem;
+        }
+
+        .case-study h3 {
+            font-size: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .case-study-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .case-study-section h4 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.125rem;
+        }
+
+        .case-study-section p {
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--color-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--color-text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .testimonial-role {
+            color: var(--color-text-light);
+            font-size: 0.875rem;
+        }
+
+        /* Contact Form */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: var(--color-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--color-text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--color-text-light);
+        }
+
+        .contact-details .icon {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-text);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--color-primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-bg);
+                padding: 1rem;
+                box-shadow: var(--shadow-md);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.25rem;
+            }
+
+            .stats-grid,
+            .skills-grid,
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Customer Care Pro</div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-image">👤</div>
+            <h1>Your Name Here</h1>
+            <h2>Customer Care Specialist</h2>
+            <p>Delivering 100% Client Satisfaction with 5+ Years of Experience | Expert in CRM, Technical Support &amp; Client Relations</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#experience" class="btn btn-secondary">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Tickets Resolved</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Satisfaction Rating</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">&lt;2 min</div>
+                <div class="stat-label">Avg Response Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5+ Years</div>
+                <div class="stat-label">Experience</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Passionate about creating exceptional customer experiences</p>
+        <div style="background: var(--color-bg); padding: 3rem; border-radius: 12px; box-shadow: var(--shadow-md);">
+            <p style="font-size: 1.125rem; line-height: 1.8; color: var(--color-text-light); margin-bottom: 1.5rem;">
+                With over 5 years of dedicated experience in customer service, I specialize in transforming challenging customer interactions into positive experiences. My approach combines technical expertise with genuine empathy, ensuring every customer feels heard, valued, and satisfied.
+            </p>
+            <p style="font-size: 1.125rem; line-height: 1.8; color: var(--color-text-light); margin-bottom: 1.5rem;">
+                Throughout my career, I've successfully managed high-volume support across multiple channels including phone, email, live chat, and social media. I pride myself on maintaining a 98% customer satisfaction rating while consistently meeting and exceeding performance targets.
+            </p>
+            <p style="font-size: 1.125rem; line-height: 1.8; color: var(--color-text-light);">
+                <strong style="color: var(--color-primary);">Core Values:</strong> Empathy, Clear Communication, Problem-Solving Excellence, Continuous Improvement, and Client-First Mentality.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container">
+        <h2 class="section-title">Skills &amp; Expertise</h2>
+        <p class="section-subtitle">Comprehensive skill set for exceptional customer service</p>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>💻 Technical Skills</h3>
+                <ul class="skill-list">
+                    <li>CRM Software (Zendesk, Salesforce, HubSpot)</li>
+                    <li>Help Desk Platforms (Freshdesk, Intercom)</li>
+                    <li>Live Chat Tools (Intercom, Drift)</li>
+                    <li>Ticketing Systems (Jira Service Desk)</li>
+                    <li>Microsoft Office Suite</li>
+                    <li>Google Workspace</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>💬 Communication Skills</h3>
+                <ul class="skill-list">
+                    <li>Phone Support Excellence</li>
+                    <li>Professional Email Writing</li>
+                    <li>Live Chat Management</li>
+                    <li>Social Media Support</li>
+                    <li>Active Listening</li>
+                    <li>Clear Documentation</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>🎯 Problem-Solving</h3>
+                <ul class="skill-list">
+                    <li>Conflict Resolution</li>
+                    <li>Technical Troubleshooting</li>
+                    <li>Critical Thinking</li>
+                    <li>Complaint Management</li>
+                    <li>Escalation Handling</li>
+                    <li>Root Cause Analysis</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>🌍 Additional Skills</h3>
+                <ul class="skill-list">
+                    <li>Multi-channel Support</li>
+                    <li>Time Management</li>
+                    <li>Data Entry &amp; Analysis</li>
+                    <li>Team Collaboration</li>
+                    <li>Languages: English, Hindi</li>
+                    <li>Customer Retention Strategies</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="container">
+        <h2 class="section-title">Services I Offer</h2>
+        <p class="section-subtitle">Comprehensive customer care solutions</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📞</div>
+                <h3>Customer Support</h3>
+                <p>Professional phone, email, and live chat support to handle customer inquiries, provide information, and ensure satisfaction across all communication channels.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Technical Troubleshooting</h3>
+                <p>Expert technical support to diagnose and resolve customer issues, guide users through solutions, and coordinate with technical teams for complex problems.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📦</div>
+                <h3>Order Management</h3>
+                <p>Complete order processing, tracking, and management services including handling returns, exchanges, and ensuring smooth transaction experiences.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚠️</div>
+                <h3>Complaint Resolution</h3>
+                <p>Professional handling of customer complaints and escalations with empathy and efficiency, turning dissatisfied customers into loyal advocates.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👤</div>
+                <h3>Account Management</h3>
+                <p>Comprehensive account support including setup, updates, troubleshooting access issues, and maintaining customer account integrity.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Data Entry &amp; Records</h3>
+                <p>Accurate data entry, record keeping, and CRM management to ensure customer information is properly documented and accessible.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="container">
+        <h2 class="section-title">Work Experience</h2>
+        <p class="section-subtitle">Professional journey in customer service</p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">January 2022 - Present</div>
+                <h3>Senior Customer Support Representative</h3>
+                <h4>E-commerce Company (Remote)</h4>
+                <ul>
+                    <li>Handle 150+ customer inquiries daily via phone, email, and live chat</li>
+                    <li>Maintain 98% customer satisfaction rating (CSAT) consistently</li>
+                    <li>Resolve 95% of issues on first contact, exceeding company targets</li>
+                    <li>Train and mentor 5 new team members on customer service protocols</li>
+                    <li>Reduced average response time from 10 minutes to under 2 minutes</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">June 2020 - December 2021</div>
+                <h3>Customer Service Representative</h3>
+                <h4>Tech Support Company</h4>
+                <ul>
+                    <li>Provided technical support for software products to 100+ daily customers</li>
+                    <li>Achieved 96% customer satisfaction score throughout tenure</li>
+                    <li>Documented and escalated complex technical issues effectively</li>
+                    <li>Contributed to knowledge base with 20+ troubleshooting articles</li>
+                    <li>Received "Employee of the Month" award 3 times</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">March 2019 - May 2020</div>
+                <h3>Customer Care Associate</h3>
+                <h4>Retail Services</h4>
+                <ul>
+                    <li>Managed customer inquiries for retail products via multiple channels</li>
+                    <li>Processed orders, returns, and exchanges efficiently</li>
+                    <li>Maintained detailed records of customer interactions in CRM</li>
+                    <li>Assisted in developing customer service training materials</li>
+                    <li>Consistently met and exceeded monthly performance targets</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="container">
+        <h2 class="section-title">Success Stories</h2>
+        <p class="section-subtitle">Real examples of problem-solving excellence</p>
+        <div class="case-studies-grid">
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-icon">📌</div>
+                    <h3>Angry Customer to Loyal Advocate</h3>
+                </div>
+                <div class="case-study-section">
+                    <h4>Challenge:</h4>
+                    <p>Customer received damaged product after 2-week wait, threatening to leave negative review and never purchase again. Customer was extremely frustrated and emotional.</p>
+                </div>
+                <div class="case-study-section">
+                    <h4>Action:</h4>
+                    <p>Immediately acknowledged frustration and apologized sincerely. Expedited replacement with overnight shipping at no cost. Offered 20% discount on next purchase. Made personal follow-up call to ensure satisfaction with replacement.</p>
+                </div>
+                <div class="case-study-section">
+                    <h4>Result:</h4>
+                    <p>Customer left 5-star review praising customer service. Made 3 repeat purchases within next 2 months. Referred 2 new customers to the company. Average order value increased by 40%.</p>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-icon">📌</div>
+                    <h3>Complex Technical Issue Resolution</h3>
+                </div>
+                <div class="case-study-section">
+                    <h4>Challenge:</h4>
+                    <p>Customer unable to access account for 2 days due to technical glitch. Issue was preventing customer from completing urgent business transactions. Multiple previous support attempts failed.</p>
+                </div>
+                <div class="case-study-section">
+                    <h4>Action:</h4>
+                    <p>Coordinated with technical team to identify root cause. Provided hourly updates to customer via preferred communication channel. Personally tested solution before confirming with customer. Created detailed documentation for preventing similar issues.</p>
+                </div>
+                <div class="case-study-section">
+                    <h4>Result:</h4>
+                    <p>Issue resolved within 4 hours. Customer praised responsiveness and communication. Upgraded to premium plan citing excellent support. Testimonial featured in company marketing materials.</p>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-icon">📌</div>
+                    <h3>Billing Dispute Turned Opportunity</h3>
+                </div>
+                <div class="case-study-section">
+                    <h4>Challenge:</h4>
+                    <p>Customer disputed unexpected charges totaling $450 on account. Customer was confused about billing structure and considering cancellation. Situation required careful handling to prevent churn.</p>
+                </div>
+                <div class="case-study-section">
+                    <h4>Action:</h4>
+                    <p>Reviewed account history thoroughly. Explained charges clearly with detailed breakdown. Identified billing plan mismatch. Recommended better-suited plan saving customer 30% monthly. Applied partial credit as goodwill gesture.</p>
+                </div>
+                <div class="case-study-section">
+                    <h4>Result:</h4>
+                    <p>Customer retained and satisfied with new plan. Saved $180 annually with optimized billing. Referred 1 enterprise client worth $12,000 annually. Provided video testimonial for company website.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="container">
+        <h2 class="section-title">Client Testimonials</h2>
+        <p class="section-subtitle">What customers say about my service</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Absolutely outstanding service! She resolved my issue within minutes and made me feel valued as a customer. Her patience and professionalism are unmatched."</p>
+                <div class="testimonial-author">Sarah Mitchell</div>
+                <div class="testimonial-role">Verified E-commerce Customer</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Best customer service experience I've ever had. Quick response, genuinely cared about solving my problem, and followed up to ensure everything was working perfectly."</p>
+                <div class="testimonial-author">John Davidson</div>
+                <div class="testimonial-role">Business Client - US Market</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"She went above and beyond to help me understand the technical issue. Her clear communication and expertise turned a frustrating situation into a positive experience."</p>
+                <div class="testimonial-author">Emily Roberts</div>
+                <div class="testimonial-role">Tech Support Customer</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"I was about to cancel my subscription, but her exceptional service changed my mind. She took the time to find the perfect solution for my needs."</p>
+                <div class="testimonial-author">Michael Chang</div>
+                <div class="testimonial-role">Subscription Service User</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Incredible attention to detail and genuine empathy. She handled my complaint professionally and turned me into a loyal customer advocate."</p>
+                <div class="testimonial-author">Lisa Anderson</div>
+                <div class="testimonial-role">Retail Customer</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Her response time is remarkable and her knowledge is impressive. Every interaction leaves me more confident in choosing this company."</p>
+                <div class="testimonial-author">David Kumar</div>
+                <div class="testimonial-role">Enterprise Client</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">Available for customer service opportunities</p>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>I'm available for full-time positions, part-time roles, remote opportunities, and freelance customer support projects. Let's discuss how I can help your business deliver exceptional customer experiences.</p>
+                <ul class="contact-details">
+                    <li>
+                        <span class="icon">📧</span>
+                        <span>your.email@example.com</span>
+                    </li>
+                    <li>
+                        <span class="icon">📞</span>
+                        <span>+91 XXXXX XXXXX</span>
+                    </li>
+                    <li>
+                        <span class="icon">📍</span>
+                        <span>Your City, India</span>
+                    </li>
+                    <li>
+                        <span class="icon">⏰</span>
+                        <span>Available: Mon-Fri, 9 AM - 6 PM IST</span>
+                    </li>
+                </ul>
+            </div>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" title="LinkedIn">💼</a>
+                <a href="#" title="Twitter">🐦</a>
+                <a href="#" title="Email">📧</a>
+                <a href="#" title="WhatsApp">💬</a>
+            </div>
+            <p>&copy; 2024 Customer Care Portfolio. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.875rem; opacity: 0.8;">Built with dedication to exceptional customer service</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+
+            // Here you would typically send the data to a backend
+            // For now, we'll just show a success message
+            alert('Thank you for your message! I will get back to you within 24 hours.');
+            contactForm.reset();
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animation for stats
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for animation
+        document.querySelectorAll('.stat-card, .skill-category, .service-card, .timeline-item, .case-study, .testimonial-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
+
